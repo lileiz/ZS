@@ -9,8 +9,15 @@
     <input type="text" name="xss_input">
     <input type="submit">
   </form>
-<h1 align="center">
-你输入的字符为
+<h1>
+<?
+$xss=@$_GET['xss_input'];
+$a-htmlspecialchars($xss,ENT_QUOTES);
+echo '你输入的字符为<br>'.$xss;
+?>
+<!---1.alert("警告")
+  2.confirm("确认")
+  3.prompt("提示")--->
 </h1>
 		<h2 align="center">欢迎来到ZS空间</p2>
 		<h3><p align="center"><a href="https://www.baidu.com">百度</a></p>
